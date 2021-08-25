@@ -1,0 +1,1 @@
+export const GATEWAYS_STORAGE = 'GATEWAYS_STORAGE';
