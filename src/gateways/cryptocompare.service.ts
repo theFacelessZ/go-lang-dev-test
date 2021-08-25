@@ -144,9 +144,19 @@ export class CryptocompareService {
     endpoint: string,
     params: { [key: string]: any },
   ): Promise<any> {
+    // Flatten parameters.
+    const paramsFlattened = {};
+    Object.keys(params).forEach((key) => {
+      if (Array.isArray(params[key])) {
+        paramsFlattened[key] = params[key].join(',');
+      } else {
+        paramsFlattened[key] = params[key];
+      }
+    });
+
     // Should be moved to a separate service.
     return axios.get(`https://min-api.cryptocompare.com/data/${endpoint}`, {
-      params,
+      params: paramsFlattened,
     });
   }
 }
