@@ -27,6 +27,5 @@ export class GatewayAdapter extends WsAdapter {
   }
 }
 
-export const SubscribeGatewayMessage: () => MethodDecorator = () => {
-  return SubscribeMessage(DEFAULT_MESSAGE);
-};
+export const SubscribeGatewayMessage: MethodDecorator =
+  SubscribeMessage(DEFAULT_MESSAGE);

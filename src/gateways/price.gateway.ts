@@ -8,14 +8,14 @@ export class PriceRequest {
   tsyms: string | string[];
 }
 
-@WebSocketGateway(3001, {
+@WebSocketGateway({
   path: '/service/price',
 })
 export class PriceGateway {
   constructor(protected readonly service: CryptocompareService) {}
 
   @UsePipes(new ValidationPipe())
-  @SubscribeGatewayMessage()
+  @SubscribeGatewayMessage
   handleMessage(@MessageBody() { fsyms, tsyms }: PriceRequest): any {
     return this.service.priceMultifull(fsyms, tsyms);
   }

@@ -7,7 +7,7 @@ import { GatewayAdapter } from './gateway.adapter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useWebSocketAdapter(new GatewayAdapter());
+  app.useWebSocketAdapter(new GatewayAdapter(app));
 
   await app.listen(3000);
 }
