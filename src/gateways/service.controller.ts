@@ -1,4 +1,10 @@
-import { Controller, Get, Query, UsePipes, ValidationPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Query,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { CryptocompareService } from './cryptocompare.service';
 import { PriceRequest } from './price.gateway';
 
