@@ -1,7 +1,7 @@
 Go Lang Developer Test (JS)
 ===
 
-A "go lang developer test" implemented in typescript using nestjs library. 
+A "go lang developer test" implemented in typescript using nestjs. 
 
 ## Installation
 
