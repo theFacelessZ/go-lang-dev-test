@@ -20,6 +20,8 @@ export class GatewayAdapter extends WsAdapter {
         (handler) => handler.message === DEFAULT_MESSAGE,
       );
 
+      // Implement error handling here to make sure websocket
+      // is notified about any validation/request error.
       return transform(messageHandler.callback(message));
     } catch {
       return empty();

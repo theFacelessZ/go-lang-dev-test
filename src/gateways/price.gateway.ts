@@ -2,9 +2,12 @@ import { MessageBody, WebSocketGateway } from '@nestjs/websockets';
 import { SubscribeGatewayMessage } from '../gateway.adapter';
 import { UsePipes, ValidationPipe } from '@nestjs/common';
 import { CryptocompareService } from './cryptocompare.service';
+import { IsNotEmpty } from 'class-validator';
 
 export class PriceRequest {
+  @IsNotEmpty()
   fsyms: string | string[];
+  @IsNotEmpty()
   tsyms: string | string[];
 }
 

@@ -5,6 +5,7 @@ import { DatabaseCacheStore } from './database.cache.store';
 import { Knex } from 'knex';
 import { MysqlStorage } from './mysql.storage';
 import { GATEWAYS_STORAGE } from './gateways.constants';
+import { ServiceController } from './service.controller';
 
 export interface GatewaysModuleOptions {
   database: Knex.ConnectionConfig;
@@ -38,6 +39,7 @@ export class GatewaysModule {
           useValue: storage,
         },
       ],
+      controllers: [ServiceController],
       exports: [],
       module: GatewaysModule,
     };
